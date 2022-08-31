@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 15:37:36 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/08/31 17:22:56 by tda-silv         ###   ########.fr       */
+/*   Created: 2021/11/23 15:48:32 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/24 19:38:24 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <sys/types.h>
-# include <signal.h>
-# include <stdio.h>
-# include "./libft/libft.h"
-# include "./client_child/client_child.h"
-# include "./server_child/server_child.h"
+size_t	ft_strlen(const char *s)
+{
+	size_t	a;
 
-#endif
+	a = 0;
+	while (s[a])
+		a++;
+	return (a);
+}
