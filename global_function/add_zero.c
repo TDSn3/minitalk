@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   add_zero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 15:37:36 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/01 12:42:10 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/01 15:02:10 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/01 17:00:08 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../header.h"
 
-# include <unistd.h>
-# include <sys/types.h>
-# include <signal.h>
-# include <stdio.h>
-# include "./libft/libft.h"
-# include "./global_function/global_function.h"
-# include "./server_child/server_child.h"
-# include "./client_child/client_child.h"
+char	*add_zero(char **str)
+{
+	int		size_str;
+	char	*new_str;
+	int		i;
+	int		j;
 
-#endif
+	i = 0;
+	j = 0;
+	size_str = ft_strlen(*str);
+	if (size_str < 8)
+	{
+		new_str = malloc(9);
+		while (i < 8 - size_str)
+		{
+			new_str[i] = '0';
+			i++; 
+		}
+		while (i < 8)
+		{
+			new_str[i] = (*str)[j];
+			i++;
+			j++;
+		}
+		new_str[8] = 0;
+		free(*str);
+		return (new_str);
+	}
+	return (NULL);
+}

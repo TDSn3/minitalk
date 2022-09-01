@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   find_size_pid.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 15:37:36 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/01 12:42:10 by tda-silv         ###   ########.fr       */
+/*   Created: 2021/12/11 12:01:21 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/01 14:40:30 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../header.h"
 
-# include <unistd.h>
-# include <sys/types.h>
-# include <signal.h>
-# include <stdio.h>
-# include "./libft/libft.h"
-# include "./global_function/global_function.h"
-# include "./server_child/server_child.h"
-# include "./client_child/client_child.h"
+void	find_size_pid(int n, size_t *size_pid)
+{	
+	if (n > 9)
+	{
+		*size_pid += 1;
+		find_size_pid(n / 10, size_pid);
+	}
+	else if (n < 9)
+		*size_pid += 1;
+} 
+/*
 
-#endif
+Calcul la taille du pid
+Passez 0 pour le paramètre size_pid
+
+*/

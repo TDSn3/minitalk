@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 11:49:58 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/08/31 16:13:07 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/01 10:55:42 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	c_check_error(int argc, char *argv[])
 	int	pid_server;
 
 	i = 0;
-	if (argc != 3)
+	if (argc != 3 || !argv[2] || !argv[2][0])
 	{
 		write(2, "Error - Not a good number of parameters, need two\n", 50);
 		return (1);
@@ -45,12 +45,11 @@ int	c_check_error(int argc, char *argv[])
 	}
 	return (0);
 }
-
 /*
 
 Renvois Error si :
-- le client ne recois pas 2 arguments
-- le premier argument ne contien pas que des chiffres
+- le client ne reçoit pas 2 arguments ou si le deuxième argument est NULL
+- le premier argument ne contient pas que des chiffres
 - le pib server n'est pas bon
 
 */
