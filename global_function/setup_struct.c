@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_conv_str_bin.c                                   :+:      :+:    :+:   */
+/*   setup_struct.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 10:44:35 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 14:19:21 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/02 10:04:14 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/02 12:41:53 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	s_conv_str_bin(char *argv[], int pid_client)
+void	stetup_struct(t_data *g_d)
 {
-	int		i;
-	char	*str;
-
-	i = 0;
-	while (argv[2][i])
-	{
-		str = ft_itoa_two(argv[2][i]);
-		str = add_zero(&str);
-		s_send_signal(str, pid_client);
-		free(str);
-		i++;
-	}	
+	g_d->i_signal = 0;
+	g_d->stock_signal_rec = 0;
+	g_d->i_zero = 0;
+	g_d->on_off = 0;
+	g_d->list_bit = NULL;
 }
-
-/*
-
-Converti une string composé de caractères en son équivalent binaire
-
-*/

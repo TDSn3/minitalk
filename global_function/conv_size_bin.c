@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 12:01:21 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/01 17:44:34 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/02 14:19:54 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	conv_size_bin(char *str, int pid, size_t size_pid_client)
 	x = 0;
 	while (i < size_pid_client)
 	{
-		stock_bin = ft_itoa((pid % 10) + '0');
+		stock_bin = ft_itoa_two((pid % 10) + '0');
 		stock_bin = add_zero(&stock_bin);
 		printf("%d - %s\n", pid, stock_bin);
 

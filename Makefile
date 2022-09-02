@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 15:34:54 by tda-silv          #+#    #+#              #
-#    Updated: 2022/09/01 15:29:02 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/09/02 15:30:53 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,19 @@ NAME_TWO = client
 
 SRC_GLOBAL = ./libft/ft_atoi.c \
 			 ./libft/ft_strlen.c \
-			 ./libft/ft_itoa.c \
+			 ./libft/ft_itoa_two.c \
+			 ./libft/ft_itoa_ten.c \
 			 ./global_function/find_size_pid.c \
 			 ./global_function/add_zero.c \
 			 ./global_function/conv_size_bin.c \
+			 ./global_function/setup_struct.c \
+			 ./global_function/conv_oct_int.c \
+			 ./t_li/li_add_back.c \
+			 ./t_li/li_clear_one.c \
+			 ./t_li/li_clear.c \
+			 ./t_li/*li_last.c \
+			 ./t_li/*li_new.c \
+			 ./t_li/li_size.c \
 
 SRC_ONE = ./server.c \
 		  ./server_child/s_conv_str_bin.c \

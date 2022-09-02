@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_two.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 12:15:18 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/08/31 16:19:12 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/02 13:10:07 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static char	*ft_cpy(unsigned int n_size, long int n_copy, char *s)
 	return (s);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa_two(int n)
 {
 	long int		n_copy;
 	unsigned int	n_size;

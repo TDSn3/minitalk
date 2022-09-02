@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_conv_str_bin.c                                   :+:      :+:    :+:   */
+/*   li_add_back.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 10:44:35 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 14:19:21 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 16:18:44 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/02 12:23:10 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	s_conv_str_bin(char *argv[], int pid_client)
+void	li_add_back(t_li **lst, t_li *new)
 {
-	int		i;
-	char	*str;
+	t_li	*copyl;
 
-	i = 0;
-	while (argv[2][i])
+	if (lst)
 	{
-		str = ft_itoa_two(argv[2][i]);
-		str = add_zero(&str);
-		s_send_signal(str, pid_client);
-		free(str);
-		i++;
-	}	
+		if (!*lst)
+			*lst = new;
+		else
+		{
+			copyl = li_last(*lst);
+			copyl->next = new;
+			copyl->next->prev = copyl;
+		}
+	}
 }
-
-/*
-
-Converti une string composé de caractères en son équivalent binaire
-
-*/

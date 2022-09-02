@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_conv_str_bin.c                                   :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 10:44:35 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 14:19:21 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/02 10:00:26 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/02 12:43:51 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#ifndef STRUCT_H
+# define STRUCT_H
 
-void	s_conv_str_bin(char *argv[], int pid_client)
+typedef struct s_list_int
 {
-	int		i;
-	char	*str;
+	int					content;
+	struct s_list_int	*prev;
+	struct s_list_int	*next;
+}	t_li;
 
-	i = 0;
-	while (argv[2][i])
-	{
-		str = ft_itoa_two(argv[2][i]);
-		str = add_zero(&str);
-		s_send_signal(str, pid_client);
-		free(str);
-		i++;
-	}	
-}
+typedef struct  s_data
+{
+	int		i_signal;
+	int		stock_signal_rec;
+	int		i_zero;
+	int		on_off;
+	t_li	*list_bit;
+}   t_data;
 
-/*
-
-Converti une string composé de caractères en son équivalent binaire
-
-*/
+#endif

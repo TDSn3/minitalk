@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_conv_str_bin.c                                   :+:      :+:    :+:   */
+/*   t_li.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 10:44:35 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 14:19:21 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/02 12:28:44 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#ifndef T_LI_H
+# define T_LI_H
 
-void	s_conv_str_bin(char *argv[], int pid_client)
-{
-	int		i;
-	char	*str;
+void	li_add_back(t_li **lst, t_li *new);
+void	li_clear_one(t_li **li, int content);
+void	li_clear(t_li **lst);
+t_li	*li_last(t_li *lst);
+t_li	*li_new(int content);
+int     li_size(t_li *lst);
 
-	i = 0;
-	while (argv[2][i])
-	{
-		str = ft_itoa_two(argv[2][i]);
-		str = add_zero(&str);
-		s_send_signal(str, pid_client);
-		free(str);
-		i++;
-	}	
-}
-
-/*
-
-Converti une string composé de caractères en son équivalent binaire
-
-*/
+#endif

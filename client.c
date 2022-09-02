@@ -6,12 +6,13 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:36:59 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/01 17:52:37 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/02 12:53:05 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
+static void	handler(int signal);
 
 int	main(int argc, char *argv[])
 {
@@ -23,7 +24,7 @@ int	main(int argc, char *argv[])
 
 	size_pid_client = 0;
 	pid_client = getpid();
-	printf("Pid client : %d\n", pid_client);
+	printf("\033[33mPid client : \033[33;04m%d\033[00m\n", pid_client);
 
 	if (c_check_error(argc, argv))
 		return (1);
@@ -31,7 +32,7 @@ int	main(int argc, char *argv[])
 
 	{
 		find_size_pid(pid_client, &size_pid_client);
-		printf("size of pid is %zu\n", size_pid_client);
+		printf("\033[32;02mSize of pid is %zu\033[00m\n", size_pid_client);
 		(void) str_pid_client;
 		
 		size_pid_clien_bin = malloc((8 * size_pid_client) + 9); // alloue 8 bits par caractere plus 8 pour le 8*0 + 1 pour le NULL
@@ -53,7 +54,7 @@ int	main(int argc, char *argv[])
 				else if (size_pid_clien_bin[i] == '1')	
 					kill(pid_server, 12);
 				i++;
-				pause();
+				usleep(100000); // 100000 pour valgrind sinon 500
 				sigaction(SIGUSR1, &start_signal, 0);
 				sigaction(SIGUSR2, &start_signal, 0);
 			}
