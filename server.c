@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:37:06 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 15:46:10 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/03 13:10:55 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(void)
 	sigemptyset(&start_signal.sa_mask);
 	
 	i = 0;
-	nb_ten = 0;
+	nb_ten = 1;
 	nb_of_zero = 0;
 	pid_server = getpid();
 	pid_client = 0;
@@ -46,10 +46,7 @@ int	main(void)
 	{
 		sigaction(SIGUSR1, &start_signal, 0);
 		sigaction(SIGUSR2, &start_signal, 0);
-		if (g_d.stock_signal_rec && g_d.on_off)
-		{
-//			printf("Signal %d stock\n", d.stock_signal_rec);
-		}
+
 		if (g_d.i_zero == 8)
 		{
 			printf("\033[32mEND OF FIRST COMMUNICATION - Pid of client received\033[00m\n");
@@ -60,16 +57,18 @@ int	main(void)
 				j = 0;
 				stock_octet[8] = 0;
 				li_cpy = g_d.list_bit;
-				printf("Pid client in binary :\n");
+				printf("\033[33;02mPid client in binary :\033[00m\n");
 				while (li_cpy)
 				{
 					if (j == 8)
 					{
 						j = 0;
 						printf("\033[00;02m(%s)\033[00m", stock_octet);
-						printf("%c\n", conv_oct_int(stock_octet));
-						pid_client += conv_oct_int(stock_octet) * (10 * nb_ten);
-						nb_ten++;
+						printf("%c", conv_oct_int(stock_octet));
+						
+						printf("   %d = (%d - '0') * %d\n", pid_client, conv_oct_int(stock_octet), nb_ten);
+						pid_client += (conv_oct_int(stock_octet) - '0') * nb_ten;
+						nb_ten *= 10;
 					}
 					stock_octet[j] = li_cpy->content + '0';
 					printf("%d", li_cpy->content);
@@ -77,8 +76,14 @@ int	main(void)
 					j++;
 				}
 				printf("\n");
-				printf("Pid client : %d", pid_client);
+				printf("\033[33mPid client : \033[33;04m%d\033[00m\n", pid_client);
 				j = 0;
+
+				if (kill(pid_client, 0) == 0)
+				{
+					printf("\033[32;03mConnexion establised with the server\033[00m\n");	
+				}
+				
 //			}
 			
 			li_clear(&g_d.list_bit);
