@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_li.h                                             :+:      :+:    :+:   */
+/*   global_function.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/24 12:55:28 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/01 12:26:54 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/02 15:26:54 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_LI_H
-# define T_LI_H
+#ifndef GLOBAL_FUNCTION_H
+# define GLOBAL_FUNCTION_H
 
-int 	li_add_back(t_li **lst, t_li *new);
-void	li_clear_one(t_li **li, int content);
-void	li_clear(t_li **lst);
-t_li	*li_last(t_li *lst);
-t_li	*li_new(int content);
-int     li_size(t_li *lst);
+void	find_size_pid(int n, size_t *size_pid);
+char	*add_zero(char **str);
+void	conv_size_bin(char *str, int pid, size_t size_pid_client);
+void	stetup_struct(t_data *g_d);
+int		conv_oct_int(char *str);
 
 #endif

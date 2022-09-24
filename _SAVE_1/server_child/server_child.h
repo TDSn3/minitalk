@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_li.h                                             :+:      :+:    :+:   */
+/*   server_child.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/24 12:55:28 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/08/31 11:56:10 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/01 12:45:12 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_LI_H
-# define T_LI_H
+#ifndef SERVER_CHILD_H
+# define SERVER_CHILD_H
 
-int 	li_add_back(t_li **lst, t_li *new);
-void	li_clear_one(t_li **li, int content);
-void	li_clear(t_li **lst);
-t_li	*li_last(t_li *lst);
-t_li	*li_new(int content);
-int     li_size(t_li *lst);
+void	s_conv_str_bin(char *argv[], int pid_client);
+void	s_send_signal(char *str, int pid_client);
 
 #endif

@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_li.h                                             :+:      :+:    :+:   */
+/*   setup_struct.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/24 12:55:28 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/02 10:04:14 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/02 12:41:53 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_LI_H
-# define T_LI_H
+#include "../header.h"
 
-int 	li_add_back(t_li **lst, t_li *new);
-void	li_clear_one(t_li **li, int content);
-void	li_clear(t_li **lst);
-t_li	*li_last(t_li *lst);
-t_li	*li_new(int content);
-int     li_size(t_li *lst);
-
-#endif
+void	stetup_struct(t_data *g_d)
+{
+	g_d->i_signal = 0;
+	g_d->stock_signal_rec = 0;
+	g_d->i_zero = 0;
+	g_d->on_off = 0;
+	g_d->list_bit = NULL;
+}

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_li.h                                             :+:      :+:    :+:   */
+/*   li_new.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/24 12:55:28 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 10:59:24 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/02 12:24:35 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_LI_H
-# define T_LI_H
+#include "../header.h"
 
-int 	li_add_back(t_li **lst, t_li *new);
-void	li_clear_one(t_li **li, int content);
-void	li_clear(t_li **lst);
-t_li	*li_last(t_li *lst);
-t_li	*li_new(int content);
-int     li_size(t_li *lst);
+t_li	*li_new(int content)
+{
+	t_li	*ln;
 
-#endif
+	ln = malloc(sizeof(t_li));
+	if (!ln)
+		return (NULL);
+	ln->content = content;
+	ln->next = NULL;
+	ln->prev = NULL;
+	return (ln);
+}

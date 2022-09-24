@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_li.h                                             :+:      :+:    :+:   */
+/*   find_size_pid.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/24 12:55:28 by tda-silv         ###   ########.fr       */
+/*   Created: 2021/12/11 12:01:21 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/01 14:40:30 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_LI_H
-# define T_LI_H
+#include "../header.h"
 
-int 	li_add_back(t_li **lst, t_li *new);
-void	li_clear_one(t_li **li, int content);
-void	li_clear(t_li **lst);
-t_li	*li_last(t_li *lst);
-t_li	*li_new(int content);
-int     li_size(t_li *lst);
+void	find_size_pid(int n, size_t *size_pid)
+{	
+	if (n > 9)
+	{
+		*size_pid += 1;
+		find_size_pid(n / 10, size_pid);
+	}
+	else if (n < 9)
+		*size_pid += 1;
+} 
+/*
 
-#endif
+Calcul la taille du pid
+Passez 0 pour le paramètre size_pid
+
+*/

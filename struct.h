@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 10:00:26 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 12:43:51 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/17 11:12:55 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ typedef struct s_list_int
 	struct s_list_int	*next;
 }	t_li;
 
-typedef struct  s_data
+typedef struct  s_data_minitalk
 {
-	int		i_signal;
-	int		stock_signal_rec;
-	int		i_zero;
-	int		on_off;
-	t_li	*list_bit;
-}   t_data;
+	int	pid_server;
+	int	pid_client;
+}   t_data_minitalk;
 
 #endif

@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 15:34:54 by tda-silv          #+#    #+#              #
-#    Updated: 2022/09/24 12:54:40 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/09/02 15:30:53 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,6 @@ CFLAGS = -Wall -Wextra -Werror
 NAME_ONE = server
 
 NAME_TWO = client
-
-HEADERS = ./header.h \
-		  ./struct.h \
 
 SRC_GLOBAL = ./libft/ft_atoi.c \
 			 ./libft/ft_strlen.c \
@@ -52,22 +49,18 @@ OBJ_ONE = $(SRC_ONE:.c=.o)
 
 OBJ_TWO = $(SRC_TWO:.c=.o)
 
-all: $(NAME_ONE) $(NAME_TWO) $(HEADERS)
+all: $(NAME_ONE) $(NAME_TWO)
 
 $(NAME_ONE): $(OBJ_ONE) $(OBJ_GLOBAL)
-	cd ./ft_printf; make
-	$(CC) $(CFLAGS) -o $(NAME_ONE) $^ ./ft_printf/libftprintf.a
+	$(CC) $(CFLAGS) -o $(NAME_ONE) $^
 	
 $(NAME_TWO): $(OBJ_TWO) $(OBJ_GLOBAL)
-	cd ./ft_printf; make
-	$(CC) $(CFLAGS) -o $(NAME_TWO) $^ ./ft_printf/libftprintf.a
+	$(CC) $(CFLAGS) -o $(NAME_TWO) $^
 
 clean:
-	cd ./ft_printf; make clean
 	rm -f $(OBJ_ONE) $(OBJ_TWO) $(OBJ_GLOBAL)
 
 fclean: clean
-	cd ./ft_printf; make fclean
 	rm -f $(NAME_ONE) $(NAME_TWO)
 
 re: fclean all

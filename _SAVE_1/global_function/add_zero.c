@@ -1,23 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_li.h                                             :+:      :+:    :+:   */
+/*   add_zero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/24 12:55:28 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/01 15:02:10 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/01 17:00:08 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_LI_H
-# define T_LI_H
+#include "../header.h"
 
-int 	li_add_back(t_li **lst, t_li *new);
-void	li_clear_one(t_li **li, int content);
-void	li_clear(t_li **lst);
-t_li	*li_last(t_li *lst);
-t_li	*li_new(int content);
-int     li_size(t_li *lst);
+char	*add_zero(char **str)
+{
+	int		size_str;
+	char	*new_str;
+	int		i;
+	int		j;
 
-#endif
+	i = 0;
+	j = 0;
+	size_str = ft_strlen(*str);
+	if (size_str < 8)
+	{
+		new_str = malloc(9);
+		while (i < 8 - size_str)
+		{
+			new_str[i] = '0';
+			i++; 
+		}
+		while (i < 8)
+		{
+			new_str[i] = (*str)[j];
+			i++;
+			j++;
+		}
+		new_str[8] = 0;
+		free(*str);
+		return (new_str);
+	}
+	return (NULL);
+}

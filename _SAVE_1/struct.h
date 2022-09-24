@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_li.h                                             :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/24 12:55:28 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/02 10:00:26 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/02 12:43:51 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_LI_H
-# define T_LI_H
+#ifndef STRUCT_H
+# define STRUCT_H
 
-int 	li_add_back(t_li **lst, t_li *new);
-void	li_clear_one(t_li **li, int content);
-void	li_clear(t_li **lst);
-t_li	*li_last(t_li *lst);
-t_li	*li_new(int content);
-int     li_size(t_li *lst);
+typedef struct s_list_int
+{
+	int					content;
+	struct s_list_int	*prev;
+	struct s_list_int	*next;
+}	t_li;
+
+typedef struct  s_data
+{
+	int		i_signal;
+	int		stock_signal_rec;
+	int		i_zero;
+	int		on_off;
+	t_li	*list_bit;
+}   t_data;
 
 #endif

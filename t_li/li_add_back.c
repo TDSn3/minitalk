@@ -6,16 +6,18 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 16:18:44 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 12:23:10 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/24 12:55:55 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	li_add_back(t_li **lst, t_li *new)
+int	li_add_back(t_li **lst, t_li *new)
 {
 	t_li	*copyl;
 
+	if (!new)
+		return (1);
 	if (lst)
 	{
 		if (!*lst)
@@ -27,4 +29,5 @@ void	li_add_back(t_li **lst, t_li *new)
 			copyl->next->prev = copyl;
 		}
 	}
+	return (0);
 }
