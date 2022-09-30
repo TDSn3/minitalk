@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_conv_str_bin.c                                   :+:      :+:    :+:   */
+/*   li_find_pid.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 10:44:35 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/30 12:53:51 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/30 12:22:19 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/30 12:34:35 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	s_conv_str_bin(char *argv[], int pid_client)
+int li_find_pid(t_li *client_connected, int pid)
 {
-	int		i;
-	char	*str;
+	t_li	*nextl;
+	size_t	i;
 
 	i = 0;
-	while (argv[2][i])
+	nextl = client_connected;
+	if (!client_connected)
+		return (0);
+	while (nextl)
 	{
-		str = ft_itoa_two(argv[2][i]);
-		str = add_zero(&str);
-		s_send_signal(str, pid_client);
-		free(str);
+		if (nextl->content == pid)
+			return (pid);
+		nextl = nextl->next;
 		i++;
 	}
+	return (0);
 }
-
-/*
-
-Converti une string composé de caractères en son équivalent binaire
-
-*/

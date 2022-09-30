@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 11:49:58 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 11:51:32 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/30 10:34:30 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	c_check_error(int argc, char *argv[])
 		return (1);
 	}
 	else
-		printf("\033[32;03mConnexion establised with the server - Pid server : \033[32;04m%d\033[00m\n", pid_server);
+		ft_printf("\033[32;03mConnexion establised with the server - Pid server : \033[32;04m%d\033[00m\n", pid_server);
 	return (0);
 }
 /*

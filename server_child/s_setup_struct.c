@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_conv_str_bin.c                                   :+:      :+:    :+:   */
+/*   s_setup_struct.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 10:44:35 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/30 12:53:51 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/02 10:04:14 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/30 12:13:15 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	s_conv_str_bin(char *argv[], int pid_client)
+void	s_setup_struct(t_s_data_minitalk *g_d)
 {
-	int		i;
-	char	*str;
-
-	i = 0;
-	while (argv[2][i])
-	{
-		str = ft_itoa_two(argv[2][i]);
-		str = add_zero(&str);
-		s_send_signal(str, pid_client);
-		free(str);
-		i++;
-	}
+	g_d->pid_server = 0;
+	g_d->pid_client = 0;
+	g_d->i_signal = 0;
+	g_d->stock_signal = 0;
+	g_d->i_zero = 0;
+	g_d->client_connected = NULL;
 }
 
 /*
 
-Converti une string composé de caractères en son équivalent binaire
+Initialise la structure
 
 */

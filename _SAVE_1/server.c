@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:37:06 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/17 09:53:26 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/30 10:48:52 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void	handler(int signal);
 int	main(void)
 {
 	int					i;
-
 	int					j;
 	int					nb_ten;
 	char				stock_octet[9];
