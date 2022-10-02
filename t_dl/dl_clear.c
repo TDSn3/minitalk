@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   li_size.c                                          :+:      :+:    :+:   */
+/*   dl_clear.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 13:59:36 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/02 15:57:31 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/17 15:19:08 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/02 15:34:15 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-int	li_size(t_li *lst)
+void	dl_clear(t_dl **lst)
 {
-	t_li	*nextl;
-	size_t	i;
+	t_dl	*copyl;
 
-	i = 0;
-	nextl = lst;
-	if (!lst)
-		return (0);
-	while (nextl)
+	copyl = *lst;
+	if (!*lst)
+		return ;
+	while (copyl)
 	{
-		nextl = nextl->next;
-		i++;
+		*lst = copyl->next;
+		free(copyl);
+		li_clear(&(copyl->next_li));
+		copyl = *lst;
 	}
-	return (i);
+	*lst = NULL;
 }

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   li_size.c                                          :+:      :+:    :+:   */
+/*   t_dl.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 13:59:36 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/02 15:57:31 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/02 16:29:29 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#ifndef T_DL_H
+# define T_DL_H
 
-int	li_size(t_li *lst)
-{
-	t_li	*nextl;
-	size_t	i;
+int 	dl_add_back(t_dl **lst, t_dl *new);
+void	dl_clear_one(t_dl **li, int content);
+void	dl_clear(t_dl **lst);
+t_dl	*dl_last(t_dl *lst);
+t_dl	*dl_new(int content);
+int		dl_size(t_dl *lst);
+t_li	*dl_find_pid(t_dl *client_connected, int pid);
 
-	i = 0;
-	nextl = lst;
-	if (!lst)
-		return (0);
-	while (nextl)
-	{
-		nextl = nextl->next;
-		i++;
-	}
-	return (i);
-}
+#endif

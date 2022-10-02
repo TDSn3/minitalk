@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:05:48 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/30 15:30:38 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/02 13:45:58 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ void c_send_str_signal(t_c_data_minitalk *g_d, char *str)
 		{
 			kill(g_d->pid_server, 10);
 			sigaction(SIGUSR1, &ssa_a, 0);
-			sigaction(SIGUSR2, &ssa_a, 0);
-			if (sleep(10) == 10)
+			if (sleep(10) == 0)
 			{
 				write(2, "Error - One bit lost\n", 22);
 				exit(1);
@@ -39,9 +38,8 @@ void c_send_str_signal(t_c_data_minitalk *g_d, char *str)
 		else if (str[i] == '1')	
 		{
 			kill(g_d->pid_server, 12);
-			sigaction(SIGUSR1, &ssa_a, 0);
 			sigaction(SIGUSR2, &ssa_a, 0);
-			if (sleep(10) == 10)
+			if (sleep(10) == 0)
 			{
 				write(2, "Error - One bit lost\n", 22);
 				exit(1);

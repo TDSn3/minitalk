@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   li_size.c                                          :+:      :+:    :+:   */
+/*   dl_last.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 13:59:36 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/02 15:57:31 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/10/02 15:59:44 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/02 15:59:59 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-int	li_size(t_li *lst)
+t_dl	*dl_last(t_dl *lst)
 {
-	t_li	*nextl;
-	size_t	i;
-
-	i = 0;
-	nextl = lst;
 	if (!lst)
-		return (0);
-	while (nextl)
-	{
-		nextl = nextl->next;
-		i++;
-	}
-	return (i);
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

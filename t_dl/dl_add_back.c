@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   li_size.c                                          :+:      :+:    :+:   */
+/*   dl_add_back.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 13:59:36 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/02 15:57:31 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 16:18:44 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/02 15:24:56 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-int	li_size(t_li *lst)
+int	dl_add_back(t_dl **lst, t_dl *new)
 {
-	t_li	*nextl;
-	size_t	i;
+	t_dl	*copyl;
 
-	i = 0;
-	nextl = lst;
-	if (!lst)
-		return (0);
-	while (nextl)
+	if (!new)
+		return (1);
+	if (lst)
 	{
-		nextl = nextl->next;
-		i++;
+		if (!*lst)
+			*lst = new;
+		else
+		{
+			copyl = dl_last(*lst);
+			copyl->next = new;
+			copyl->next->prev = copyl;
+		}
 	}
-	return (i);
+	return (0);
 }

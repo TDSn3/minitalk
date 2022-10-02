@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   li_size.c                                          :+:      :+:    :+:   */
+/*   dl_new.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 13:59:36 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/02 15:57:31 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 10:59:24 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/02 18:22:32 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-int	li_size(t_li *lst)
+t_dl	*dl_new(int content)
 {
-	t_li	*nextl;
-	size_t	i;
+	t_dl	*new_dl;
+	t_li	*new_li;
 
-	i = 0;
-	nextl = lst;
-	if (!lst)
-		return (0);
-	while (nextl)
-	{
-		nextl = nextl->next;
-		i++;
-	}
-	return (i);
+	new_dl = malloc(sizeof(t_dl));
+	if (!new_dl)
+		return (NULL);
+	new_li = li_new(-1);
+	if (!new_li)
+		return (NULL);
+	new_dl->next_li = new_li;
+	new_dl->content = content;
+	new_dl->next = NULL;
+	new_dl->prev = NULL;
+	new_dl->prev_li = NULL;
+	return (new_dl);
 }

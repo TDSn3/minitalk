@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 15:34:54 by tda-silv          #+#    #+#              #
-#    Updated: 2022/09/30 14:15:05 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/10/02 16:07:36 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,12 @@ NAME_TWO = client
 
 HEADERS = ./header.h \
 		  ./struct.h \
+		  ./libft/libft.h \
+		  ./global_function/global_function.h \
+		  ./t_li/t_li.h \
+		  ./t_dl/t_dl.h \
+		  ./server_child/server_child.h \
+		  ./client_child/client_child.h \
 
 SRC_GLOBAL = ./libft/ft_atoi.c \
 			 ./libft/ft_strlen.c \
@@ -35,10 +41,17 @@ SRC_GLOBAL = ./libft/ft_atoi.c \
 			 ./t_li/li_add_back.c \
 			 ./t_li/li_clear_one.c \
 			 ./t_li/li_clear.c \
-			 ./t_li/*li_last.c \
-			 ./t_li/*li_new.c \
+			 ./t_li/li_last.c \
+			 ./t_li/li_new.c \
 			 ./t_li/li_size.c \
 			 ./t_li/li_find_pid.c \
+			 ./t_dl/dl_new.c \
+			 ./t_dl/dl_add_back.c \
+			 ./t_dl/dl_clear.c \
+			 ./t_dl/dl_find_pid.c \
+			 ./t_dl/dl_size.c \
+			 ./t_dl/dl_last.c \
+			 ./t_dl/dl_clear_one.c \
 
 SRC_ONE = ./server.c \
 		  ./server_child/s_conv_str_bin.c \
