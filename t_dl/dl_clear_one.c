@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 08:58:51 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/02 19:17:31 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/04 14:37:53 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	dl_clear_one(t_dl **dl, int content)
 	dl_cpy = *dl;
 	if (dl_size_stock == 1)
 	{
-		free(*dl);
 		li_clear(&(*dl)->next_li);
+		free(*dl);
 		*dl = NULL;
 		return ;
 	}	

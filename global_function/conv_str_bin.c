@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 12:42:31 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/30 14:03:30 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/04 17:23:46 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,31 @@ char *conv_str_bin(char *argv)
 	i = 0;
 	str = NULL;
 	str_return = NULL;
+
+
+
+	printf("\n1\n");
+	while (argv[i])
+	{
+		printf("%d ", argv[i]);
+		i++;
+	}
+	printf("\n");
+	i = 0;
+
+	printf("\n2\n");
+	while (argv[i])
+	{
+		write(1, &argv[i], 1);
+		printf("\n%s\n", ft_itoa_two(argv[i]));
+		i++;
+	}
+	printf("\n");
+	i = 0;
+
+
+
+	
 	while (argv[i])
 	{
 		str = ft_itoa_two(argv[i]);

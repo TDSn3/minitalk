@@ -6,13 +6,13 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 15:34:54 by tda-silv          #+#    #+#              #
-#    Updated: 2022/10/02 16:07:36 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/10/04 11:58:00 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 NAME_ONE = server
 
