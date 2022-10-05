@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 12:42:31 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/04 17:23:46 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/05 14:39:39 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ char *conv_str_bin(char *argv)
 	while (argv[i])
 	{
 		str = ft_itoa_two(argv[i]);
-		str = add_zero(&str);
+		if (argv[i] > 0)
+			str = add_zero(&str);
 		str_return = ft_strjoin(str_return, str);
 		i++;
 	}

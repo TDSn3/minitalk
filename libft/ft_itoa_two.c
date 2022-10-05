@@ -6,11 +6,12 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 12:15:18 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 13:10:07 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:04:23 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
 static void	ft_swap(char *s)
 {
@@ -30,14 +31,36 @@ static void	ft_swap(char *s)
 	}
 }
 
-static void	ft_zero_or_neg(long int *n_copy, unsigned int *n_size, int *symbol)
+static void	ft_swap_index(char *s, int a)
 {
-	*n_size = 1;
-	if (*n_copy < 0)
+	int	z;
+	int		copy;
+
+	z = ft_strlen(s) - 1;
+	while (a < z)
 	{
-		*n_copy *= -1;
-		*symbol = 1;
+		copy = s[a];
+		s[a] = s[z];
+		s[z] = copy;
+		a++;
+		z--;
 	}
+}
+
+static void	inversion(char *s)
+{
+	int	a;
+	
+	a = 1;
+	while (s[a])
+	{
+		if (s[a] == '0')
+			s[a] = '1';
+		else
+			s[a] = '0';
+
+		a++;
+	}	
 }
 
 static char	*ft_cpy(unsigned int n_size, long int n_copy, char *s)
@@ -64,12 +87,52 @@ char	*ft_itoa_two(int n)
 	int				symbol;
 	long int		n2;
 	char			*s;
+	int				i;
 
 	n_copy = n;
 	n_size = 0;
 	symbol = 0;
-	if (n <= 0)
-		ft_zero_or_neg(&n_copy, &n_size, &symbol);
+	i = 0;
+	if (n == 0)
+		n_size = 1;
+
+
+
+	if (n < 0)
+	{
+		n = (n * -1) - 1;
+		n_copy = n;
+		n2 = n_copy;
+		while (n2 > 0)
+		{
+			n2 /= 2;
+			n_size++;
+		}
+		s = malloc(9);
+		while (i < 9)
+		{
+			s[i] = 0 + '0';
+			i++;
+		}
+		if (!s)
+			return (NULL);
+		s[8] = 0;
+		s[0] = 1 + '0';
+		printf("\nICI:\n");
+		printf("n : %d\n", n);
+		printf("n_size : %d\n", n_size);
+		printf("n : %s\n", s);
+		ft_cpy(n_size, n_copy, s + (8 - n_size));
+		ft_swap_index(s, (8 - n_size));
+		inversion(s);
+		printf("n : %s\n", s);
+		printf("\n");
+
+		return (s);
+	}
+
+
+
 	n2 = n_copy;
 	while (n2 > 0)
 	{
