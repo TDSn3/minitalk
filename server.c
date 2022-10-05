@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:37:06 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/04 16:34:11 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:17:58 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,8 +132,8 @@ void	check_null_li(t_dl *list, int pid)
 						if (j == 8)
 						{
 							j = 0;
-							printf("\033[00;02m(%s)\033[00m", stock_octet);
-							printf("%c ", conv_oct_int(stock_octet));
+//							printf("\033[00;02m(%s)\033[00m", stock_octet);
+							printf("%c", conv_oct_int(stock_octet));
 						}
 						stock_octet[j] = cpy_li->content + '0';
 						cpy_li = cpy_li->next;

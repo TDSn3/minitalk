@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 12:15:18 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 13:10:07 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/05 13:21:41 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,43 @@ char	*ft_itoa_two(int n)
 	int				symbol;
 	long int		n2;
 	char			*s;
+	int				i;
 
 	n_copy = n;
 	n_size = 0;
 	symbol = 0;
+	i = 0;
 	if (n <= 0)
-		ft_zero_or_neg(&n_copy, &n_size, &symbol);
+		n_size = 1;
+
+
+
+	if (n < 0)
+	{
+		printf("COUCUO\n");
+		n = (n - 1) * -1;
+			n2 = n_copy;
+		while (n2 > 0)
+		{
+			n2 /= 2;
+			n_size++;
+		}
+		s = malloc(9);
+		while (i < 9)
+		{
+			s[i] = 0 + '0';
+			i++;
+		}
+		if (!s)
+			return (NULL);
+		s[8] = 0;
+		s[0] = 1 + '0';
+		ft_swap(ft_cpy(n_size, n_copy, s + (8 - n_size)));
+		return (s);
+	}
+
+
+
 	n2 = n_copy;
 	while (n2 > 0)
 	{
