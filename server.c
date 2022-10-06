@@ -6,7 +6,11 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:37:06 by tda-silv          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/10/06 17:23:57 by tda-silv         ###   ########.fr       */
+=======
+/*   Updated: 2022/10/05 15:17:58 by tda-silv         ###   ########.fr       */
+>>>>>>> 8edb5e6eb958658a5ca95e8fa4db97b773fcfb2f
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +147,11 @@ int	check_null_li(t_dl *list, int pid)
 						{
 							j = 0;
 //							printf("\033[00;02m(%s)\033[00m", stock_octet);
+<<<<<<< HEAD
 							ft_printf("%c", conv_oct_int(stock_octet));
+=======
+							printf("%c", conv_oct_int(stock_octet));
+>>>>>>> 8edb5e6eb958658a5ca95e8fa4db97b773fcfb2f
 						}
 						stock_octet[j] = cpy_li->content + '0';
 						cpy_li = cpy_li->next;

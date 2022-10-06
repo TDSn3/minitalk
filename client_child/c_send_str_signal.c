@@ -6,7 +6,11 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:05:48 by tda-silv          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/10/06 17:16:41 by tda-silv         ###   ########.fr       */
+=======
+/*   Updated: 2022/10/05 15:37:01 by tda-silv         ###   ########.fr       */
+>>>>>>> 8edb5e6eb958658a5ca95e8fa4db97b773fcfb2f
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +35,17 @@ void c_send_str_signal(t_c_data_minitalk *g_d, char *str)
 		{
 			ft_printf("\033[34;02mSIGUSR1\033[34;02m sended - 0\033[00m ");
 			kill(g_d->pid_server, 10);
+<<<<<<< HEAD
 			if (sleep(10) == 0)
 			{
 				kill(g_d->pid_server, 10);
+=======
+			sigaction(SIGUSR1, &ssa_a, 0);
+			if (sleep(2) == 0)
+			{
+				kill(g_d->pid_server, 10);
+				sigaction(SIGUSR1, &ssa_a, 0);
+>>>>>>> 8edb5e6eb958658a5ca95e8fa4db97b773fcfb2f
 				if (sleep(2) == 0)
 				{
 					write(2, "Error - One bit lost\n", 22);
@@ -45,9 +57,17 @@ void c_send_str_signal(t_c_data_minitalk *g_d, char *str)
 		{
 			ft_printf("\033[35;02mSIGUSR2\033[35;02m sended - 1\033[00m ");
 			kill(g_d->pid_server, 12);
+<<<<<<< HEAD
 			if (sleep(10) == 0)
 			{
 				kill(g_d->pid_server, 12);
+=======
+			sigaction(SIGUSR2, &ssa_a, 0);
+			if (sleep(2) == 0)
+			{
+				kill(g_d->pid_server, 12);
+				sigaction(SIGUSR2, &ssa_a, 0);
+>>>>>>> 8edb5e6eb958658a5ca95e8fa4db97b773fcfb2f
 				if (sleep(2) == 0)
 				{
 					write(2, "Error - One bit lost\n", 22);
@@ -56,7 +76,11 @@ void c_send_str_signal(t_c_data_minitalk *g_d, char *str)
 			}
 		}
 		i++;
+<<<<<<< HEAD
 //		usleep(500); // 100000 pour valgrind sinon 500
+=======
+		usleep(50000); // 100000 pour valgrind sinon 500
+>>>>>>> 8edb5e6eb958658a5ca95e8fa4db97b773fcfb2f
 	}
 }
 
