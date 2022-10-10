@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 12:15:18 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/05 15:04:23 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:46:09 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,16 +118,9 @@ char	*ft_itoa_two(int n)
 			return (NULL);
 		s[8] = 0;
 		s[0] = 1 + '0';
-		printf("\nICI:\n");
-		printf("n : %d\n", n);
-		printf("n_size : %d\n", n_size);
-		printf("n : %s\n", s);
 		ft_cpy(n_size, n_copy, s + (8 - n_size));
 		ft_swap_index(s, (8 - n_size));
 		inversion(s);
-		printf("n : %s\n", s);
-		printf("\n");
-
 		return (s);
 	}
 
@@ -147,14 +140,3 @@ char	*ft_itoa_two(int n)
 		s[0] = '-';
 	return (s);
 }
-/*
-#include <stdio.h>
-
-int main(void)
-{
-    char    *s = ft_itoa(4); // -2147483648
-    printf("\ns:%s\n\n", s);
-    free(s);
-    return (0);
-}
-*/

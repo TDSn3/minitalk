@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:19:08 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/02 15:34:15 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:31:25 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 void	dl_clear(t_dl **lst)
 {
-	t_dl	*copyl;
+	t_dl	**copydl_one;
+	t_dl	*copydl_two;
 
-	copyl = *lst;
+	copydl_one = lst;
 	if (!*lst)
 		return ;
-	while (copyl)
+	while (*copydl_one)
 	{
-		*lst = copyl->next;
-		free(copyl);
-		li_clear(&(copyl->next_li));
-		copyl = *lst;
+		copydl_two = (*copydl_one)->next;
+		li_clear(&((*copydl_one)->next_li));
+		free(*copydl_one);
+		*copydl_one = NULL;
+		*copydl_one = copydl_two;
 	}
 	*lst = NULL;
 }

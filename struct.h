@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 10:00:26 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/02 18:03:37 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/10 16:58:25 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ typedef struct  s_c_data_minitalk
 {
 	int	pid_server;
 	int	pid_client;
+	int	i_signal;
+	int	stock_signal;
 }   t_c_data_minitalk;
 
 #endif

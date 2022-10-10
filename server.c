@@ -6,11 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:37:06 by tda-silv          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/10/06 17:23:57 by tda-silv         ###   ########.fr       */
-=======
-/*   Updated: 2022/10/05 15:17:58 by tda-silv         ###   ########.fr       */
->>>>>>> 8edb5e6eb958658a5ca95e8fa4db97b773fcfb2f
+/*   Updated: 2022/10/10 17:58:02 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +40,7 @@ static void	handler(int signal, siginfo_t *x, void *y)
 {
 	t_li	*stock_li;
 	
+	(void) y;
 	if (signal == 10)
 	{
 		if (g_d.i_signal % 8 == 0)
@@ -54,7 +51,7 @@ static void	handler(int signal, siginfo_t *x, void *y)
 		if (!dl_find_pid(g_d.client_connected, (int)(x->si_pid)))
 		{
 			dl_add_back(&g_d.client_connected, dl_new((int)(x->si_pid)));
-			ft_printf("\\033[33mNew pid client : \033[33;04m%d\033[00m\n", (int)(x->si_pid));
+			ft_printf("\033[33mNew pid client : \033[33;04m%d\033[00m\n", (int)(x->si_pid));
 		}
 		ft_printf("\033[34mSIGUSR1\033[34;02m received - 0   | i.zero = %d\t\t\ti.signal = %d  (%d)\033[00m\n", g_d.i_zero, g_d.i_signal,g_d.stock_signal);
 		stock_li = dl_find_pid(g_d.client_connected, (int)(x->si_pid));
@@ -65,8 +62,8 @@ static void	handler(int signal, siginfo_t *x, void *y)
 		}
 		li_add_back(&stock_li, li_new(0));
 		check_null_li(g_d.client_connected, (int)(x->si_pid));
-		usleep(1000);
 		kill((int)(x->si_pid), 10);
+		return ;
 	}
 	else if (signal == 12)
 	{
@@ -77,7 +74,7 @@ static void	handler(int signal, siginfo_t *x, void *y)
 		if (!dl_find_pid(g_d.client_connected, (int)(x->si_pid)))
 		{
 			dl_add_back(&g_d.client_connected, dl_new((int)(x->si_pid)));
-			ft_printf("New pid clien : %d\n", (int)(x->si_pid));
+			ft_printf("\033[33mNew pid client : \033[33;04m%d\033[00m\n", (int)(x->si_pid));
 		}
 		ft_printf("\033[35mSIGUSR2\033[35;02m received - 1\t\t\t\t\ti.signal = %d  (%d)\033[00m\n", g_d.i_signal, g_d.stock_signal);
 		stock_li = dl_find_pid(g_d.client_connected, (int)(x->si_pid));
@@ -87,10 +84,10 @@ static void	handler(int signal, siginfo_t *x, void *y)
 			exit(1);
 		}
 		li_add_back(&stock_li, li_new(1));
-		usleep(1000);
+//		usleep(1000);
 		kill((int)(x->si_pid), 12);
+		return ;
 	}	
-	(void) y;
 }
 
 int	check_null_li(t_dl *list, int pid)
@@ -147,11 +144,8 @@ int	check_null_li(t_dl *list, int pid)
 						{
 							j = 0;
 //							printf("\033[00;02m(%s)\033[00m", stock_octet);
-<<<<<<< HEAD
 							ft_printf("%c", conv_oct_int(stock_octet));
-=======
 							printf("%c", conv_oct_int(stock_octet));
->>>>>>> 8edb5e6eb958658a5ca95e8fa4db97b773fcfb2f
 						}
 						stock_octet[j] = cpy_li->content + '0';
 						cpy_li = cpy_li->next;
