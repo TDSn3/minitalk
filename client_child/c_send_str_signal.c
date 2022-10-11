@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:05:48 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/10 17:59:40 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/11 12:23:30 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void c_send_str_signal(char *str, int pid_client, int pid_server)
 		{
 			ft_printf("\033[34;02mSIGUSR1\033[34;02m sended - 0\033[00m ");
 			kill(pid_server, 10);
-			if (g_d.stock_signal != 1 && sleep(2) == 0)
+			if (g_d.stock_signal != 1 && sleep(10) == 0)
 			{
 				ft_printf("\nOne bit lost - Retry\n");
 				ft_printf("\033[34;02mSIGUSR1\033[34;02m sended - 0\033[00m ");
@@ -52,7 +52,7 @@ void c_send_str_signal(char *str, int pid_client, int pid_server)
 		{
 			ft_printf("\033[35;02mSIGUSR2\033[35;02m sended - 1\033[00m ");
 			kill(pid_server, 12);
-			if (g_d.stock_signal != 2 && sleep(2) == 0)
+			if (g_d.stock_signal != 2 && sleep(10) == 0)
 			{
 				ft_printf("\nOne bit lost - Retry\n");
 				ft_printf("\033[35;02mSIGUSR2\033[35;02m sended - 1\033[00m ");
@@ -66,7 +66,6 @@ void c_send_str_signal(char *str, int pid_client, int pid_server)
 		}
 		i++;
 		g_d.stock_signal = 0;
-//		usleep(500); // 100000 pour valgrind sinon 500
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:36:59 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/10 17:15:36 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/11 12:49:18 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char *argv[])
 	pid_server = ft_atoi(argv[1]);
 	str_bin = conv_str_bin(argv[2]);
 	c_send_str_signal(str_bin, pid_client, pid_server);
+	free(str_bin);
 	return (0);
 }
 

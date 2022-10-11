@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:19:08 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/10 14:32:08 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:29:25 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 void	li_clear(t_li **lst)
 {
-	t_li	**copyl;
+	t_li	**copyli;
+	t_li	*copyli_two;
 
-	copyl = lst;
+	copyli = lst;
 	if (!*lst)
 		return ;
-	while (*copyl)
+	while (*copyli)
 	{
-		*lst = (*copyl)->next;
-		free(*copyl);
-		*copyl = NULL;
-		copyl = lst;
+		copyli_two = (*copyli)->next;
+		(*copyli)->content = -2;
+		free(*copyli);
+		*copyli = copyli_two;
 	}
 	*lst = NULL;
 }

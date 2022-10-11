@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 15:34:54 by tda-silv          #+#    #+#              #
-#    Updated: 2022/10/04 11:58:00 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/10/11 15:01:36 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRC_ONE = ./server.c \
 		  ./server_child/s_conv_str_bin.c \
 		  ./server_child/s_send_signal.c \
 		  ./server_child/s_setup_struct.c \
+		  ./server_child/s_check_null_li.c \
 
 SRC_TWO = ./client.c \
 		  ./client_child/c_check_error.c \
