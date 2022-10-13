@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 15:20:34 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/05 15:17:22 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/13 15:57:55 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 int conv_oct_int(char *str)
 {
 	int nb;
-	int	max_min;
 
 	nb = 0;
-	max_min = 0;
 
 	if (str[0] == '1')
 	{

@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 12:15:18 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/10 14:46:09 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:15:01 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,6 @@ char	*ft_itoa_two(int n)
 	i = 0;
 	if (n == 0)
 		n_size = 1;
-
-
-
 	if (n < 0)
 	{
 		n = (n * -1) - 1;
@@ -109,6 +106,8 @@ char	*ft_itoa_two(int n)
 			n_size++;
 		}
 		s = malloc(9);
+		if (!s)
+			return (NULL);
 		while (i < 9)
 		{
 			s[i] = 0 + '0';
@@ -123,9 +122,6 @@ char	*ft_itoa_two(int n)
 		inversion(s);
 		return (s);
 	}
-
-
-
 	n2 = n_copy;
 	while (n2 > 0)
 	{

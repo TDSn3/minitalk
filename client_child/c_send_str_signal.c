@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:05:48 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/11 12:23:30 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:44:16 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	handler(int signal, siginfo_t *x, void *y)
 	{
 		g_d.i_signal += 1;
 		g_d.stock_signal = 2;
-		printf("\033[35m  SIGUSR2\033[35;02m received - 1\033[00m\n");
+		ft_printf("\033[35m  SIGUSR2\033[35;02m received - 1\033[00m\n");
 	}
 	(void) x;
 	(void) y;

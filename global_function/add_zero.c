@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 15:02:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/01 17:00:08 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:21:13 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ char	*add_zero(char **str)
 	if (size_str < 8)
 	{
 		new_str = malloc(9);
+		if (!new_str)
+		{
+			write(2, "\033[31;01mError - Malloc failled\033[00m\n", 38);
+			free(*str);
+			exit (1);
+		}
 		while (i < 8 - size_str)
 		{
 			new_str[i] = '0';
