@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_child.h                                     :+:      :+:    :+:   */
+/*   li_last.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:56:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 19:06:04 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 14:52:12 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/19 11:17:34 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_CHILD_H
-# define SERVER_CHILD_H
+#include "../header.h"
 
-void	s_setup_struct(t_s_data_minitalk *g_d);
-int     s_check_null_li(t_dl **list, int pid);
-void    s_handler_kill(t_dl **client_connected, int pid, int signal);
-
-#endif
+t_li	*li_last(t_li *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
+}

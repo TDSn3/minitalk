@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_child.h                                     :+:      :+:    :+:   */
+/*   dl_new.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:56:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 19:06:04 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 10:59:24 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/02 18:22:32 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_CHILD_H
-# define SERVER_CHILD_H
+#include "../header.h"
 
-void	s_setup_struct(t_s_data_minitalk *g_d);
-int     s_check_null_li(t_dl **list, int pid);
-void    s_handler_kill(t_dl **client_connected, int pid, int signal);
+t_dl	*dl_new(int content)
+{
+	t_dl	*new_dl;
+	t_li	*new_li;
 
-#endif
+	new_dl = malloc(sizeof(t_dl));
+	if (!new_dl)
+		return (NULL);
+	new_li = li_new(-1);
+	if (!new_li)
+		return (NULL);
+	new_dl->next_li = new_li;
+	new_dl->content = content;
+	new_dl->next = NULL;
+	new_dl->prev = NULL;
+	new_dl->prev_li = NULL;
+	return (new_dl);
+}

@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_child.h                                     :+:      :+:    :+:   */
+/*   t_dl.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:56:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 19:06:04 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/02 16:29:29 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_CHILD_H
-# define SERVER_CHILD_H
+#ifndef T_DL_H
+# define T_DL_H
 
-void	s_setup_struct(t_s_data_minitalk *g_d);
-int     s_check_null_li(t_dl **list, int pid);
-void    s_handler_kill(t_dl **client_connected, int pid, int signal);
+int 	dl_add_back(t_dl **lst, t_dl *new);
+void	dl_clear_one(t_dl **li, int content);
+void	dl_clear(t_dl **lst);
+t_dl	*dl_last(t_dl *lst);
+t_dl	*dl_new(int content);
+int		dl_size(t_dl *lst);
+t_li	*dl_find_pid(t_dl *client_connected, int pid);
 
 #endif

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_child.h                                     :+:      :+:    :+:   */
+/*   ft_putnbr_hexa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:56:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 19:06:04 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/31 16:08:57 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/04/01 17:03:54 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_CHILD_H
-# define SERVER_CHILD_H
+#include "ft_printf.h"
 
-void	s_setup_struct(t_s_data_minitalk *g_d);
-int     s_check_null_li(t_dl **list, int pid);
-void    s_handler_kill(t_dl **client_connected, int pid, int signal);
-
-#endif
+void	ft_putnbr_hexa(unsigned long long int nbr, t_data *data)
+{
+	if (nbr > 15)
+		ft_putnbr_hexa(nbr / 16, data);
+	ft_putchar_hexa(nbr % 16 + '0', data);
+}

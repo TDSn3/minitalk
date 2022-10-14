@@ -6,14 +6,14 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 12:19:00 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/30 12:24:48 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/14 19:13:22 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef T_LI_H
 # define T_LI_H
 
-int 	li_add_back(t_li **lst, t_li *new);
+int		li_add_back(t_li **lst, t_li *new);
 void	li_clear_one(t_li **li, int content);
 void	li_clear(t_li **lst);
 t_li	*li_last(t_li *lst);

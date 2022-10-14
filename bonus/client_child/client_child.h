@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_child.h                                     :+:      :+:    :+:   */
+/*   client_child.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:56:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 19:06:04 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/08/31 11:54:06 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/14 16:36:47 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_CHILD_H
-# define SERVER_CHILD_H
+#ifndef CLIENT_CHILD_H
+# define CLIENT_CHILD_H
 
-void	s_setup_struct(t_s_data_minitalk *g_d);
-int     s_check_null_li(t_dl **list, int pid);
-void    s_handler_kill(t_dl **client_connected, int pid, int signal);
+int 	c_check_error(int argc, char *argv[]);
+void	c_conv_str_bin(char *argv[], int pid_server);
+void	c_setup_struct(t_c_data_minitalk *g_d);
+void    c_send_str_signal(char *str, int pid_client, int pid_server);
 
 #endif

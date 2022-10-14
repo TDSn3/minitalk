@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_child.h                                     :+:      :+:    :+:   */
+/*   li_clear.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:56:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 19:06:04 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/17 15:19:08 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/11 15:29:25 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_CHILD_H
-# define SERVER_CHILD_H
+#include "../header.h"
 
-void	s_setup_struct(t_s_data_minitalk *g_d);
-int     s_check_null_li(t_dl **list, int pid);
-void    s_handler_kill(t_dl **client_connected, int pid, int signal);
+void	li_clear(t_li **lst)
+{
+	t_li	**copyli;
+	t_li	*copyli_two;
 
-#endif
+	copyli = lst;
+	if (!*lst)
+		return ;
+	while (*copyli)
+	{
+		copyli_two = (*copyli)->next;
+		(*copyli)->content = -2;
+		free(*copyli);
+		*copyli = copyli_two;
+	}
+	*lst = NULL;
+}

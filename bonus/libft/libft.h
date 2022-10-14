@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_child.h                                     :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:56:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 19:06:04 by tda-silv         ###   ########.fr       */
+/*   Created: 2021/12/11 18:27:51 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/11 12:38:39 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_CHILD_H
-# define SERVER_CHILD_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-void	s_setup_struct(t_s_data_minitalk *g_d);
-int     s_check_null_li(t_dl **list, int pid);
-void    s_handler_kill(t_dl **client_connected, int pid, int signal);
+# include <unistd.h>
+# include <stdlib.h>
+# include <stddef.h>
+
+size_t	ft_strlen(const char *s);
+int		ft_atoi(const char *nptr);
+char	*ft_itoa_two(int n);
+char	*ft_itoa_ten(int n);
+char	*ft_strjoin(char **s1, char **s2);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 #endif

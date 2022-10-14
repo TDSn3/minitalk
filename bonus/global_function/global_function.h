@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_child.h                                     :+:      :+:    :+:   */
+/*   global_function.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:56:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 19:06:04 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/09/01 12:26:54 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/09/30 13:56:17 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_CHILD_H
-# define SERVER_CHILD_H
+#ifndef GLOBAL_FUNCTION_H
+# define GLOBAL_FUNCTION_H
 
-void	s_setup_struct(t_s_data_minitalk *g_d);
-int     s_check_null_li(t_dl **list, int pid);
-void    s_handler_kill(t_dl **client_connected, int pid, int signal);
-
+void	find_size_pid(int n, size_t *size_pid);
+char	*add_zero(char **str);
+void	conv_size_bin(char *str, int pid, size_t size_pid_client);
+int		conv_oct_int(char *str);
+char    *conv_str_bin(char *str);
 #endif
