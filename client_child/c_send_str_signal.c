@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:05:48 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 19:06:52 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/15 13:56:22 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static t_c_data_minitalk	g_d;
 static void	handler(int signal, siginfo_t *x, void *y);
-static void kill_and_wait_signal_ten(int pid_server);
-static void kill_and_wait_signal_twelve(int pid_server);
+static void	kill_and_wait_signal_ten(int pid_server);
+static void	kill_and_wait_signal_twelve(int pid_server);
 
-void c_send_str_signal(char **str, int pid_client, int pid_server)
+void	c_send_str_signal(char **str, int pid_client, int pid_server)
 {
-	int i;
+	int					i;
 	struct sigaction	ssa_a;
 
 	i = 0;
@@ -32,7 +32,7 @@ void c_send_str_signal(char **str, int pid_client, int pid_server)
 	sigaction(SIGINT, &ssa_a, 0);
 	while ((*str)[i])
 	{
-		if ((*str)[i] == '0')	
+		if ((*str)[i] == '0')
 			kill_and_wait_signal_ten(pid_server);
 		else
 			kill_and_wait_signal_twelve(pid_server);
@@ -56,7 +56,7 @@ static void	handler(int signal, siginfo_t *x, void *y)
 		g_d.stock_signal = 2;
 }
 
-static void kill_and_wait_signal_ten(int pid_server)
+static void	kill_and_wait_signal_ten(int pid_server)
 {
 	kill(pid_server, 10);
 	if (g_d.stock_signal != 1 && sleep(10) == 0)
@@ -71,7 +71,7 @@ static void kill_and_wait_signal_ten(int pid_server)
 	}
 }
 
-static void kill_and_wait_signal_twelve(int pid_server)
+static void	kill_and_wait_signal_twelve(int pid_server)
 {
 	kill(pid_server, 12);
 	if (g_d.stock_signal != 2 && sleep(10) == 0)

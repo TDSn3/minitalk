@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client_child.h                                     :+:      :+:    :+:   */
+/*   ft_swap_index.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:54:06 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/15 13:54:05 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/10/15 15:50:08 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/15 15:50:53 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLIENT_CHILD_H
-# define CLIENT_CHILD_H
+#include "libft.h"
 
-int		c_check_error(int argc, char *argv[]);
-void	c_setup_struct(t_c_data_minitalk *g_d, char **s, int pc, int ps);
-void	c_send_str_signal(char **str, int pid_client, int pid_server);
+void	ft_swap_index(char *s, int a)
+{
+	int	z;
+	int	copy;
 
-#endif
+	z = ft_strlen(s) - 1;
+	while (a < z)
+	{
+		copy = s[a];
+		s[a] = s[z];
+		s[z] = copy;
+		a++;
+		z--;
+	}
+}

@@ -6,13 +6,13 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 12:22:19 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/30 12:34:35 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/15 13:53:47 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-int li_find_pid(t_li *client_connected, int pid)
+int	li_find_pid(t_li *client_connected, int pid)
 {
 	t_li	*nextl;
 	size_t	i;

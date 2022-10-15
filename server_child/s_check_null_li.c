@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:00:21 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 19:03:18 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/15 16:38:41 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	s_check_null_li(t_dl **list, int pid)
 	return (0);
 }
 
-static int search_zero_li(t_dl **list, int pid, t_li *cpy_li)
+static int	search_zero_li(t_dl **list, int pid, t_li *cpy_li)
 {
 	int		i_zero;
 	int		i_nb;
@@ -48,7 +48,7 @@ static int search_zero_li(t_dl **list, int pid, t_li *cpy_li)
 	while (cpy_li)
 	{
 		if (i_nb % 8 == 0)
-			i_zero = 0;	
+			i_zero = 0;
 		if (cpy_li->content == 0)
 			i_zero++;
 		i_nb++;
@@ -73,13 +73,13 @@ static int	print_li(t_dl **list, int pid, t_li *cpy_li)
 		if (i == 8)
 		{
 			i = 0;
-			ft_printf("%c", conv_oct_int(stock_octet));
+			printf("%c", conv_oct_int(stock_octet));
 		}
 		stock_octet[i] = cpy_li->content + '0';
 		cpy_li = cpy_li->next;
 		i++;
 	}
-	ft_printf("\n");
+	printf("\n");
 	dl_clear_one(list, pid);
 	return (1);
 }

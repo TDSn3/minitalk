@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:37:06 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 18:06:05 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/15 16:39:00 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 	ssa_a.sa_flags = SA_SIGINFO;
 	sigemptyset(&ssa_a.sa_mask);
 	g_d.pid_server = getpid();
-	ft_printf("\033[36mPid server : \033[36;04m%d\033[00m\n", g_d.pid_server);
+	printf("\033[36mPid server : \033[36;04m%d\033[00m\n", g_d.pid_server);
 	sigaction(SIGUSR1, &ssa_a, 0);
 	sigaction(SIGUSR2, &ssa_a, 0);
 	sigaction(SIGINT, &ssa_a, 0);

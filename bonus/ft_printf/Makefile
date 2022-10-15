@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/04/02 13:16:00 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/10/15 16:30:35 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = clang
 
 CFLAGS = -Wall -Wextra -Werror
 

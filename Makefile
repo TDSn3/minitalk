@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 15:34:54 by tda-silv          #+#    #+#              #
-#    Updated: 2022/10/14 19:06:09 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/10/15 15:53:46 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,13 @@ HEADERS = ./header.h \
 SRC_GLOBAL = ./libft/ft_atoi.c \
 			 ./libft/ft_strlen.c \
 			 ./libft/ft_itoa_two.c \
+			 ./libft/n_under_zero.c \
 			 ./libft/ft_itoa_ten.c \
 			 ./libft/ft_strjoin.c \
 			 ./libft/ft_strlcpy.c \
+			 ./libft/ft_swap.c \
+			 ./libft/ft_swap_index.c \
+			 ./libft/ft_cpy.c \
 			 ./global_function/add_zero.c \
 			 ./global_function/conv_oct_int.c \
 			 ./global_function/conv_str_bin.c \

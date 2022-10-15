@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client_child.h                                     :+:      :+:    :+:   */
+/*   ft_cpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:54:06 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/15 13:54:05 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/10/15 15:52:58 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/15 15:53:24 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLIENT_CHILD_H
-# define CLIENT_CHILD_H
+#include "libft.h"
 
-int		c_check_error(int argc, char *argv[]);
-void	c_setup_struct(t_c_data_minitalk *g_d, char **s, int pc, int ps);
-void	c_send_str_signal(char **str, int pid_client, int pid_server);
+char	*ft_cpy(unsigned int n_size, long int n_copy, char *s)
+{
+	size_t	i;
+	size_t	j;
 
-#endif
+	i = 0;
+	j = 1;
+	while (i < n_size)
+	{
+		s[i] = ((n_copy / j) % 2) + 48;
+		j *= 2;
+		i++;
+	}
+	s[i] = 0;
+	return (s);
+}

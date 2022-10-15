@@ -6,16 +6,19 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 11:41:13 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/11 12:38:45 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/15 16:21:47 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static char	*one_is_null(char **s1, char **s2);
+
 char	*ft_strjoin(char **s1, char **s2)
 {
 	char	*s1s2;
 
+	s1s2 = NULL;
 	if (*s1 && *s2)
 	{
 		s1s2 = malloc(ft_strlen(*s1) + ft_strlen(*s2) + 1);
@@ -27,6 +30,17 @@ char	*ft_strjoin(char **s1, char **s2)
 		free(*s2);
 		return (s1s2);
 	}
+	if ((*s1 && !*s2) || (!*s1 && *s2))
+		s1s2 = one_is_null(s1, s2);
+	if (s1s2)
+		return (s1s2);
+	return (NULL);
+}
+
+static char	*one_is_null(char **s1, char **s2)
+{
+	char	*s1s2;
+
 	if (*s1 && !*s2)
 	{
 		s1s2 = malloc(ft_strlen(*s1) + 1);
@@ -47,17 +61,3 @@ char	*ft_strjoin(char **s1, char **s2)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	s1[] = "Super";
-	char	s2[] = "Test";
-	char	*s1s2 = ft_strjoin(s1, s2);
-
-	printf("\n%s\n%ld\n", s1s2, ft_strlen(s1s2));
-	free(s1s2);
-	return (0);
-}
-*/

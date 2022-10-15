@@ -6,29 +6,11 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 12:15:18 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/02 13:12:20 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/15 16:20:17 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	ft_swap(char *s)
-{
-	size_t	a;
-	size_t	z;
-	int		copy;
-
-	a = 0;
-	z = ft_strlen(s) - 1;
-	while (a < z)
-	{
-		copy = s[a];
-		s[a] = s[z];
-		s[z] = copy;
-		a++;
-		z--;
-	}
-}
 
 static void	ft_zero_or_neg(long int *n_copy, unsigned int *n_size, int *symbol)
 {
@@ -38,23 +20,6 @@ static void	ft_zero_or_neg(long int *n_copy, unsigned int *n_size, int *symbol)
 		*n_copy *= -1;
 		*symbol = 1;
 	}
-}
-
-static char	*ft_cpy(unsigned int n_size, long int n_copy, char *s)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 1;
-	while (i < n_size)
-	{
-		s[i] = ((n_copy / j) % 10) + 48;
-		j *= 10;
-		i++;
-	}
-	s[i] = 0;
-	return (s);
 }
 
 char	*ft_itoa_ten(int n)
