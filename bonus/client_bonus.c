@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dl_clear.c                                         :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 15:19:08 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/11 12:07:01 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/08/30 15:36:59 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/16 00:12:49 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	dl_clear(t_dl **lst)
+int	main(int argc, char *argv[])
 {
-	t_dl	**copydl_one;
-	t_dl	*copydl_two;
+	char	*str_bin;
+	int		pid_client;
+	int		pid_server;
 
-	copydl_one = lst;
-	if (!*lst)
-		return ;
-	while (*copydl_one)
-	{
-		copydl_two = (*copydl_one)->next;
-		li_clear(&((*copydl_one)->next_li));
-		(*copydl_one)->content = -1;
-		free(*copydl_one);
-		*copydl_one = copydl_two;
-	}
-	*lst = NULL;
+	pid_client = getpid();
+	if (c_check_error(argc, argv))
+		return (1);
+	pid_server = ft_atoi(argv[1]);
+	str_bin = conv_str_bin(argv[2]);
+	c_send_str_signal_bonus(&str_bin, pid_client, pid_server);
+	free(str_bin);
+	return (0);
 }
+/*
+
+Le client prend deux paramètres :
+- Le PID du serveur
+- Une chaîne de caractères à transmettre
+
+*/

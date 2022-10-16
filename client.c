@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:36:59 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/14 18:46:09 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/16 01:42:46 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char *argv[])
 	char	*str_bin;
 	int		pid_client;
 	int		pid_server;
-	
+
 	pid_client = getpid();
 	if (c_check_error(argc, argv))
 		return (1);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:37:06 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/16 01:00:39 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/16 01:01:37 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../header.h"
 
 static t_s_data_minitalk	g_d;
 static void	handler(int sig, siginfo_t *x, void *y);
@@ -41,7 +41,7 @@ static void	handler(int sig, siginfo_t *x, void *y)
 		dl_clear(&g_d.client_connected);
 		exit(0);
 	}
-	s_handler_kill(&g_d.client_connected, (int)(x->si_pid), sig);
+	s_handler_kill_bonus(&g_d.client_connected, (int)(x->si_pid), sig);
 }
 /*
 

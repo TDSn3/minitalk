@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 11:49:58 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/15 16:39:38 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/16 01:01:23 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ static int	part_two(int pid_server)
 	}
 	else
 	{
-		printf("\033[32;03mConnexion establised with the server - ");
-		printf("Pid server : \033[32;04m%d\033[00m\n", pid_server);
+		ft_printf("\033[32;03mConnexion establised with the server - ");
+		ft_printf("Pid server : \033[32;04m%d\033[00m\n", pid_server);
 	}
 	return (0);
 }

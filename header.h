@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:37:36 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/02 15:15:23 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/15 23:51:36 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@
 # include "./server_child/server_child.h"
 # include "./client_child/client_child.h"
 # include "./ft_printf/ft_printf.h"
+# include "./bonus/server_child_bonus/server_child_bonus.h"
+# include "./bonus/client_child_bonus/client_child_bonus.h"
 
 #endif

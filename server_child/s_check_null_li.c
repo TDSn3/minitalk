@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:00:21 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/10/15 16:38:41 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/10/16 00:59:30 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,13 @@ static int	print_li(t_dl **list, int pid, t_li *cpy_li)
 		if (i == 8)
 		{
 			i = 0;
-			printf("%c", conv_oct_int(stock_octet));
+			ft_printf("%c", conv_oct_int(stock_octet));
 		}
 		stock_octet[i] = cpy_li->content + '0';
 		cpy_li = cpy_li->next;
 		i++;
 	}
-	printf("\n");
+	ft_printf("\n");
 	dl_clear_one(list, pid);
 	return (1);
 }

@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_datazero.c                                      :+:      :+:    :+:   */
+/*   client_child_bonus.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/02 12:59:37 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/04/02 13:06:06 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/08/31 11:54:06 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/10/15 23:17:05 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef CLIENT_CHILD_BONUS_H
+# define CLIENT_CHILD_BONUS_H
 
-void	ft_datazero(t_data *data)
-{
-	data->c = 0;
-	data->s = NULL;
-	data->d = 0;
-	data->p = 0;
-	data->u = 0;
-	data->pos = 0;
-	data->nbr_return = 0;
-}
+void	c_send_str_signal_bonus(char **str, int pid_client, int pid_server);
+
+#endif
